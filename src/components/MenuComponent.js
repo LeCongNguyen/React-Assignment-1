@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 function RenderDishes(props) {
   return (
-    <Card onClick={props.onClick}>
-      <CardImg width='100%' src={props.dish.image} />
-      <CardImgOverlay>
-        <CardTitle>{props.dish.name}</CardTitle>
-      </CardImgOverlay>
-    </Card>
+    <Link to={`/menu/${props.dish.id}`}>
+      <Card onClick={props.onClick}>
+        <CardImg width='100%' src={props.dish.image} />
+        <CardImgOverlay>
+          <CardTitle>{props.dish.name}</CardTitle>
+        </CardImgOverlay>
+      </Card>
+    </Link>
   )
 }
 
@@ -21,9 +24,19 @@ function Menu(props) {
     )
   })
 
-  return(
+  return (
     <div className='container'>
       <div className='row'>
+        <Breadcrumb>
+          <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+          <BreadcrumbItem active>Menu</BreadcrumbItem>
+        </Breadcrumb>
+        <div className="col-12">
+          <h3>Menu</h3>
+          <hr />
+        </div>
+      </div>
+      <div className="row">
         {menu}
       </div>
     </div>
