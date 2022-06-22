@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
+<<<<<<< HEAD
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap-social/bootstrap-social.css';
+=======
+>>>>>>> 03383309d8bd81aa5a0d8126d0acca66ea8c08f0
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
